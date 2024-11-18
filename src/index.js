@@ -98,9 +98,10 @@ class App {
 
       this.page = this.pages[this.template];
 
+      this.page.create();
+
       this.onResize();
 
-      this.page.create();
       this.page.show();
 
       this.addLinkListeners();
@@ -125,11 +126,11 @@ class App {
     this.frame = window.requestAnimationFrame(this.update.bind(this));
   }
 
+  //Listeners
   addEventListeners() {
     window.addEventListener('resize', this.onResize.bind(this));
   }
 
-  //Listeners
   addLinkListeners() {
     const links = document.querySelectorAll('a');
 
